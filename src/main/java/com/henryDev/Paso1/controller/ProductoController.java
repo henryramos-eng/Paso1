@@ -44,13 +44,13 @@ public class ProductoController {
         try {
             soloProducto = productoService.findByProductoID(id);
             if (soloProducto.isPresent()) {
-                log.debug("Registro encontrado");
+                log.debug("Registro encontrados");
                 return ResponseEntity.ok().body(Optional.of(soloProducto.get()));
             } else {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
             }
         } catch (DataAccessException daex) {
-            log.error("Registro no encontrado" + daex.getMostSpecificCause());
+            log.error("Registro no encontrados" + daex.getMostSpecificCause());
 
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
