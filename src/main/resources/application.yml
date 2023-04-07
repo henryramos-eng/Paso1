@@ -1,0 +1,22 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/db_paso1
+    username: user1
+    password: user1
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+      open-in-view: true
+logging:
+  level:
+      org.springframework: WARN
+      com.henryDev.Paso1: DEBUG
+      org: INFO
+      root: debug
